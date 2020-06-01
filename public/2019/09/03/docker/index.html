@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Poplar Blog">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+          docker - undefined
+        
+    </title>
+
+    <link rel="canonical" href="poplar.cool/2019/09/03/docker/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/hux-blog.min.css">
+
+
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Poplar Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Image to hack wechat -->
+<!-- <img src="poplar.cool/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/undefined')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#docker" title="docker">docker</a>
+                        
+                          <a class="tag" href="/tags/#容器" title="容器">容器</a>
+                        
+                    </div>
+                    <h1>docker</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by poplar on
+                        2019-09-03
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+<h1 id="docker-基础镜像环境-alpine"><a href="#docker-基础镜像环境-alpine" class="headerlink" title="docker 基础镜像环境 alpine"></a>docker 基础镜像环境 alpine</h1><p>在hub官网会经常能看到 alpine 字样, alpine 是要给非常轻量级的Linux发行版,Docker官方已经推荐使用alpine 代替之前的 Ubuntu作为基础镜像环境, 好处是制作出的最终镜像文件很多, 但docker dub上目前仍以 Ubuntu 为主流的基础镜像环境.<br>下面是几个常用发行版基础镜像的大小.<br>REPOSITORY TAG IMAGE ID VIRTUAL SIZE<br>alpine latest 4e38e38c8ce0       4.799 MB<br>debian latest 4d6ce913b130      84.98 MB<br>ubuntu latest b39b81afc8ca      188.3 MB<br>centos latest 8efe422e6104       210 MB<br>alpine 内置 apk 包管理器, 而不是Ubuntu的apt, alpine 包的网址是 <a href="https://pkgs.alpinelinux.org/packages" target="_blank" rel="noopener">https://pkgs.alpinelinux.org/packages</a></p>
+<h1 id="常用-docker-images"><a href="#常用-docker-images" class="headerlink" title="常用 docker images"></a>常用 docker images</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">docker search 命令搜索指定的 image, 或者访问网址 https://hub.docker.com/explore/ </span><br><span class="line">docker pull openjdk:8-alpine  <span class="comment"># 大小为107.8MB</span></span><br><span class="line">docker pull openjdk:8             <span class="comment"># 大小为309MB </span></span><br><span class="line">docker pull nginx</span><br><span class="line">docker pull tomcat</span><br><span class="line">docker pull wnameless/oracle-xe-11g</span><br><span class="line">docker pull python</span><br><span class="line">docker pull mysql</span><br><span class="line">docker pull mongo</span><br><span class="line">docker pull redis</span><br><span class="line">docker pull rabbitmq</span><br><span class="line">docker pull rabbitmq:3-management</span><br><span class="line">------------------------------------</span><br><span class="line">用于 docker 命令学习的镜像和命令</span><br><span class="line">docker pull nginx:1.15-alpine  <span class="comment">#只需要20M的空间</span></span><br><span class="line">docker pull busybox  <span class="comment">#只占用2M空间</span></span><br><span class="line">以守护态运行容器, 经常用于容器的学习. </span><br><span class="line">docker run -d --name mybusybox busybox /bin/sh -c <span class="string">"while true; do echo hello world; sleep 1; done"</span></span><br><span class="line">使用镜像nginx:1.15-alpine以后台模式启动一个容器, 并将容器的80端口映射到主机随机端口(80是该镜像expose的端口)</span><br><span class="line">docker run -P -d --name mynginx1 nginx:1.15-alpine</span><br><span class="line">使用镜像nginx:1.15-alpine以后台模式启动一个容器, 指定主机的端口为 80</span><br><span class="line">docker run -p 80:80 -d --name mynginx2 nginx:1.15-alpine</span><br><span class="line">docker 容器端口映射</span><br><span class="line">1. 指定host端口和容器内端口</span><br><span class="line">使用镜像nginx:1.15-alpine以后台模式启动一个容器, 指定主机的端口为80, 冒号前的host端口, 冒号后为容器内部的端口. </span><br><span class="line">docker run -p 80:80 -d --name mynginx2 nginx:1.15-alpine</span><br><span class="line">2. 容器内端口随机分配一个Host端口 </span><br><span class="line">下面 -p 参数的 80 指的是容器内部的端口, 没有指定host端口, docker在主机上自动开放一个映射端口(当然是未被占用的), 自动端口号一般大于等于 32768 . </span><br><span class="line">docker run -p 80 -d --name mynginx2 nginx:1.15-alpine</span><br><span class="line">3. 自动为所有的 Dockerfile EXPOSE 端口映射Host端口</span><br><span class="line">Dockerfile EXPOSE 可能会开放多个端口, 使用 -P 参数将自动为这些容器内部端口分配对应的Host主机端口</span><br><span class="line">docker run -P -d --name mynginx1 nginx:1.15-alpine</span><br></pre></td></tr></table></figure>
+<h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">docker images 命令, 显示可用的容器</span><br><span class="line">docker rmi &lt;镜像Id&gt; 命令,删除指定镜像</span><br><span class="line">docker pull hello-world 命令 , 下载 hello-world image</span><br><span class="line">docker rmi &lt;镜像Id&gt; 命令,删除指定镜像</span><br><span class="line">docker ps 命令, 列出当前正在运行的容器, 结果的第一列是container_Id, 第2列是容器名称. </span><br><span class="line">docker ps -a 命令, 列出当前正在运行的和之前运行完的容器</span><br><span class="line">docker stop container_id/container-name 命令, 停止指定的容器, 该容器Id或名称可以从docker ps中获取. </span><br><span class="line">docker restart container_id/container-name 命令, 重新启动指定的容器, 该容器Id或名称可以从docker ps中获取. </span><br><span class="line">docker start container_id/container-name 命令, 启动指定的容器, 该容器Id或名称可以从docker ps中获取. </span><br><span class="line">docker rm container_id/container-name, 删除指定的容器</span><br><span class="line">docker rm $(docker ps -a -q) 命令, 删除所有运行结束了容器, 正在运行的容器不会被删除</span><br><span class="line">docker top container_id/container-name, 查看容器内的进程</span><br><span class="line">docker logs [-f] [-t] [--tail string] 容器名, 查看容器的日志输出, -f是打开跟踪, -t是加上时间戳, --tail 100 表示仅显示最后的100行日志</span><br><span class="line">docker search nginx, 在hub站点中搜索 nginx 镜像</span><br><span class="line">docker image inspect image_id 命令, 显示指定镜像的详细信息. </span><br><span class="line">docker container inspect container_id/container-name 命令, 显示指定容器的详细信息,包括容器的Ip</span><br><span class="line">docker images -f dangling=<span class="literal">true</span> 命令, 列出没有被容器化的镜像</span><br><span class="line">docker rmi $(docker images -qf dangling=<span class="literal">true</span>) 命令, 删除那些没有被容器化的镜像</span><br><span class="line">docker system df 命令, 可以一次性查看镜像/容器/host volume的磁盘占用情况. </span><br><span class="line">docker ps -s 命令, 输出容器的空间占用</span><br></pre></td></tr></table></figure>
+<h1 id="docker-一些管理命令集"><a href="#docker-一些管理命令集" class="headerlink" title="docker 一些管理命令集"></a>docker 一些管理命令集</h1><h4 id="除了上面常用的命令外-docker-还有一些管理命令集-这些命令集还可以包含二级命令"><a href="#除了上面常用的命令外-docker-还有一些管理命令集-这些命令集还可以包含二级命令" class="headerlink" title="除了上面常用的命令外, docker 还有一些管理命令集, 这些命令集还可以包含二级命令:"></a>除了上面常用的命令外, docker 还有一些管理命令集, 这些命令集还可以包含二级命令:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">config Manage Docker configs</span><br><span class="line">container Manage containers</span><br><span class="line">image Manage images</span><br><span class="line">network Manage networks</span><br><span class="line">node Manage Swarm nodes</span><br><span class="line">plugin Manage plugins</span><br><span class="line">secret Manage Docker secrets</span><br><span class="line">service Manage services</span><br><span class="line">stack Manage Docker stacks</span><br><span class="line">swarm Manage Swarm</span><br><span class="line">system Manage Docker</span><br><span class="line">trust Manage trust on Docker images</span><br><span class="line">volume Manage volumes</span><br><span class="line">比较常用的是, </span><br><span class="line">docker image build, 编译 Dockfile</span><br><span class="line">docker network create, 创建 docker 网络</span><br><span class="line">docker volume create, 创建数据卷</span><br></pre></td></tr></table></figure>
+<h1 id="ocker-run-exec-命令"><a href="#ocker-run-exec-命令" class="headerlink" title="ocker run/exec 命令"></a>ocker run/exec 命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">运行 hello-world 容器, 如果本地没有下载, 将会自动从hub站点下载. </span><br><span class="line">docker run hello-world 命令</span><br><span class="line">以守护态运行容器</span><br><span class="line">docker run -d --name mybusybox busybox /bin/sh -c <span class="string">"while true; do echo hello world; sleep 1; done"</span></span><br><span class="line">登陆一个容器, 运行中的容器其实是一个功能完备的Linux操作系统, 所以我们可以在登陆该容器执行常规的Linux命令. </span><br><span class="line">docker <span class="built_in">exec</span> -it container_id/container-name /bin/bash</span><br><span class="line">使用 redis-cli 登陆 myredis 容器</span><br><span class="line">docker <span class="built_in">exec</span> -it myredis redis-cli </span><br><span class="line"><span class="built_in">exec</span> 后的 -it 参数的意思是, 以交互的方式并分配一个伪tty, 经常一起联用.</span><br></pre></td></tr></table></figure>
+
+<h1 id="docker-redis-使用"><a href="#docker-redis-使用" class="headerlink" title="docker redis 使用"></a>docker redis 使用</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">docker pull redis:latest  <span class="comment"># 下载最新版的 redis image</span></span><br><span class="line">pull run redis  <span class="comment"># 简单方式启动 redis 服务</span></span><br><span class="line"></span><br><span class="line">下面命令摘自: https://blog.csdn.net/cookily_liangzai/article/details/80726163</span><br><span class="line">docker run --name redis-test -p 6379:6379 -d --restart=always redis:latest redis-server --appendonly yes --requirepass <span class="string">"your passwd"</span></span><br><span class="line">--name redis-test: 为容器指定名称为 redis-test</span><br><span class="line">-p 6379:6379 :将容器内端口映射到宿主机端口(容器端口在右边, 宿主端口在左边) </span><br><span class="line">-d: 即 --detach, 以后台的方式执行容器</span><br><span class="line">–restart=always: 随docker启动而启动</span><br><span class="line">redis-server –appendonly yes: 在容器执行redis-server启动命令, 并打开redis持久化配置 </span><br><span class="line">requirepass <span class="string">"your passwd"</span> : 设置redis认证密码</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">下面命令摘自: http://www.cnblogs.com/cgpei/p/7151612.html</span><br><span class="line"><span class="comment"># docker run -p 6699:6379 --name myredis -v $PWD/redis.conf:/etc/redis/redis.conf -v $PWD/data:/data -d redis:3.2 redis-server /etc/redis/redis.conf --appendonly yes</span></span><br><span class="line">　　命令说明：</span><br><span class="line">　　--name myredis : 指定容器名称，这个最好加上，不然在看docker进程的时候会很尴尬。</span><br><span class="line">　　-p 6699:6379 ： 端口映射，默认redis启动的是6379，至于外部端口，随便玩吧，不冲突就行。</span><br><span class="line">　　-v <span class="variable">$PWD</span>/redis.conf:/etc/redis/redis.conf ： 将主机中当前目录下的redis.conf配置文件映射。</span><br><span class="line">　　-v <span class="variable">$PWD</span>/data:/data -d redis:3.2 ： 将主机中当前目录下的data挂载到容器的/data</span><br><span class="line">　　--redis-server --appendonly yes :在容器执行redis-server启动命令，并打开redis持久化配置\</span><br><span class="line">　　注意事项：</span><br><span class="line">　　　　如果不需要指定配置，-v <span class="variable">$PWD</span>/redis.conf:/etc/redis/redis.conf 可以不用 ，</span><br><span class="line">　　　　redis-server 后面的那段 /etc/redis/redis.conf 也可以不用。</span><br></pre></td></tr></table></figure>
+<h1 id="MySQL-官方Docker镜像的使用"><a href="#MySQL-官方Docker镜像的使用" class="headerlink" title="MySQL 官方Docker镜像的使用"></a>MySQL 官方Docker镜像的使用</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">摘自 https://itbilu.com/linux/docker/EyP7QP86M.html</span><br><span class="line"></span><br><span class="line">docker run --name itbilu-mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=my-pass -d mysql:5.7</span><br><span class="line">我们就创建了一个名为 itbilu-mysql 的MySQL数据库服务器容器实例, 在创建数据库时，通过环境变量MYSQL_ROOT_PASSWORD设置数据库的root密码，还通过5.7标签指定了所使用的镜像版本。</span><br><span class="line"></span><br><span class="line">不使用cnf文件的配置方式, 启动一个MySQL服务器容器，并使用UTF-8(utf8mb4)格式的表编码：</span><br><span class="line">docker run --name itbilu-mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=my-pw -d mysql:5.7 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci</span><br><span class="line"></span><br><span class="line">使用宿主机/my/cnf/my.cnf 配置文件，这时就可以通过以下方式启动MySQL容器</span><br><span class="line">docker run --name itbilu-mysql -p 3306:3306 -v /my/cnf/:/etc/mysql/ -e MYSQL_ROOT_PASSWORD=my-pass -d mysql:5.7</span><br><span class="line"></span><br><span class="line">指定MySQL数据目录的volume </span><br><span class="line">docker run --name itbilu-mysql -p 3306:3306 -v /my/datadir:/var/lib/mysql -v /my/cnf/:/etc/mysql/ -e MYSQL_ROOT_PASSWORD=my-pw -d mysql:5.7</span><br></pre></td></tr></table></figure>
+
+
+                <hr>
+
+                
+
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2019/11/15/Windows/" data-toggle="tooltip" data-placement="top" title="Windows">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2019/08/25/mybatis插件/" data-toggle="tooltip" data-placement="top" title="mybatis插件">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+
+                
+
+            </div>
+    <!-- Side Catalog Container -->
+        
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Poplar Blog 2020 
+                    <br>
+                    Theme by <a href="http://huangxuan.me" target="_blank" rel="noopener">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px; color: #ff0000">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    Ported by <a href="http://www.poplar.cool" target="_blank" rel="noopener">Poplar</a> 
+                    <br>
+                    <a href="http://www.beian.miit.gov.cn/" target="_blank" rel="noopener" style="color: rgb(119, 119, 119);">陕 ICP 备 19025690 号</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("poplar.cool/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Side Catalog -->
+
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="poplar.cool/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
