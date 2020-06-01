@@ -4,9 +4,10 @@
 
 # Site
 title: Poplar Blog
+SEOTitle: 白杨的博客 | Poplar Blog
 subtitle: ''
-description: 'Poplar Blog'
-keywords:
+description: 'Poplar Blog | 白杨 | Web | Java'
+keywords: 'Poplar Blog | 白杨 | Web | Java'
 author: poplar
 language: zh-CN
 timezone: ''
@@ -99,3 +100,9 @@ theme: huxblog
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: ''
+
+
+# Sidebar settings
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: "For the next quantum leap<br>离开世界之前，一切都是过程"
+sidebar-avatar: /img/poplar-test.jpg  
