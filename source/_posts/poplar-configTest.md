@@ -7,6 +7,9 @@ author:     "白杨"
 header-img: "img/poplar-test.jpg"
 tags:
     - Life
+
+catagories:
+- Life
+- Poplar
 ---
 Love what I do, do what I love
-
